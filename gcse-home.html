@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 20;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+.content {padding:20px;}
+</style>
+</head>
+
+<body>
+<div class="header w3-teal">
+  <div class="w3-light-grey">
+    <button class="w3-button w3-teal w3-hover-teal w3-hover-text-black w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+  </div>
+	<h1 class="w3-text-light-grey">GCSE Revision</h1>
+	<p class="w3-text-light-grey">GCSE Home</p>
+</div>
+
+<div class="w3-bar w3-light-grey w3-text-teal">
+	<a href="http://localhost:8000/home.html" class="w3-bar-item w3-button w3-mobile">Home</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">Contact Us</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">Primary</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">CE</a>
+	<a href="http://localhost:8000/gcse-home.html" class="w3-bar-item w3-button w3-mobile">GCSE</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">A level</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">IB</a>
+  <a href="#" class="w3-bar-item w3-button w3-mobile">Resources</a>
+</div>
+
+<div class="w3-sidebar w3-border w3-bar-block w3-collapse w3-light-grey w3-text-teal w3-border" style="width:25%;right:0" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-hide-large w3-border" onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button w3-border">GCSE</a>
+  <button class="w3-button w3-block w3-left-align w3-border" onclick="myAccFunc()">Classics</button>
+  <div id="Acc" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button w3-light-grey w3-text-teal w3-border">Classics Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-light-grey w3-text-teal w3-border">Greek</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Latin</a>
+  </div>
+  <button class="w3-button w3-block w3-left-align w3-border" onclick="myAccFunc5()">English</button>
+  <div id="Acc5" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button w3-light-grey w3-text-teal w3-border">English Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Eng. Lang.</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Eng. Lit.</a>
+  </div>
+  <button class="w3-button w3-block w3-left-align w3-border" onclick="myAccFunc2()">Maths</button>
+  <div id="Acc2" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button w3-light-grey w3-text-teal w3-border">Maths Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Further Maths</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Maths</a>
+  </div>
+  <button class="w3-button w3-block w3-left-align w3-border" onclick="myAccFunc3()">MFL</button>
+  <div id="Acc3" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button w3-light-grey w3-text-teal w3-border">Languages Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">French</a>
+  </div>
+  <button class="w3-button w3-block w3-left-align w3-border" onclick="myAccFunc4()">Sciences</button>
+  <div id="Acc4" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Sciences Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Astronomy</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Biology</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Chemistry</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Comp. Sci.</a>
+    <a href="#" class="w3-bar-item w3-button w3-border w3-light-grey w3-text-teal">Physics</a>
+  </div>
+</div>
+
+<div class="w3-main" style="margin-right:200px">
+<div style="margin-right:25%">
+<div class="w3-container">
+ 	<h2>GCSE</h2>
+	<p>This is the GCSE section of this exam revision website. At the moment, the subjects available are:</p>
+	<ul>
+		<li><a href="http://localhost:8000/astronomy-gcse.html" class="w3-text-black w3-hover-text-teal">Astronomy</a></li>
+		<li><a href="http://localhost:8000/biology-gcse.html" class="w3-text-black w3-hover-text-teal">Biology</a></li>
+		<li><a href="http://localhost:8000/chemistry-gcse.html" class="w3-text-black w3-hover-text-teal">Chemistry</a></li>
+		<li><a href="http://localhost:8000/computer-science-gcse.html" class="w3-text-black w3-hover-text-teal">Computer Science</a></li>
+		<li><a href="http://localhost:8000/english-language-gcse.html" class="w3-text-black w3-hover-text-teal">English Language</a></li>
+		<li><a href="http://localhost:8000/english-literature-gcse.html" class="w3-text-black w3-hover-text-teal">English Literature</a></li>
+		<li><a href="http://localhost:8000/french-gcse.html" class="w3-text-black w3-hover-text-teal">French</a></li>
+		<li><a href="http://localhost:8000/further-maths-gcse.html" class="w3-text-black w3-hover-text-teal">Further Maths</a></li>
+		<li><a href="http://localhost:8000/greek-gcse.html" class="w3-text-black w3-hover-text-teal">Greek</a></li>
+		<li><a href="http://localhost:8000/latin-gcse.html" class="w3-text-black w3-hover-text-teal">Latin</a></li>
+		<li><a href="http://localhost:8000/maths-gcse.html" class="w3-text-black w3-hover-text-teal">Maths</a></li>
+	  <li><a href="http://localhost:8000/physics-gcse.html" class="w3-text-black w3-hover-text-teal">Physics</a></li>
+	</ul>
+</div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  change = 'open'
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  change = 'closed'
+}
+
+function myAccFunc() {
+  var x = document.getElementById("Acc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-light-grey";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-light-grey", "");
+  }
+}
+
+function myAccFunc2() {
+  var x = document.getElementById("Acc2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-light-grey";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-light-grey", "");
+  }
+}
+
+function myAccFunc3() {
+  var x = document.getElementById("Acc3");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-light-grey";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-light-grey", "");
+  }
+}
+
+function myAccFunc4() {
+  var x = document.getElementById("Acc4");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-light-grey";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-light-grey", "");
+  }
+}
+
+function myAccFunc5() {
+  var x = document.getElementById("Acc5");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-light-grey";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-light-grey", "");
+  }
+}
+
+</script>
+
+</body>
+</html>
