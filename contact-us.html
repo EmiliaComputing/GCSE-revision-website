@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 20;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+.content {padding:20px;}
+</style>
+</head>
+
+<body>
+<div class="header w3-teal">
+	<h1 class="w3-text-light-grey">Exam Revision</h1>
+	<p class="w3-text-light-grey">Contact Us</p>
+</div>
+
+<div class="w3-bar w3-light-grey w3-text-teal">
+	<a href="http://localhost:8000/home.html" class="w3-bar-item w3-button w3-mobile">Home</a>
+	<a href="http://localhose:8000/contact-us.html" class="w3-bar-item w3-button w3-mobile">Contact Us</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">Primary</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">CE</a>
+	<a href="http://localhost:8000/gcse-home.html" class="w3-bar-item w3-button w3-mobile">GCSE</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">A level</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">IB</a>
+  <a href="#" class="w3-bar-item w3-button w3-mobile">Resources</a>
+</div>
+
+<div class="w3-container">
+ 	<h2>Contact Us</h2>
+	<p>We would love to hear your feedback! To contact us, please fill out the form below. If you wish to contact us, it is compulsary to fill in the boxes marked with a '*'.</p>
+  <?php
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $name = $_POST['name'];
+      $message = $_POST['message'];
+
+      // Format the email body
+      $subject = "New Message from GCSE site";
+      $body = "Name: " . $name . "\n\n" . "Message: " . $message;
+
+      // Send the email
+      $to = "test@test.com";
+      $headers = "From: " . $name . "\r\n";
+
+      if(mail($to, $subject, $body, $headers)) {
+          echo "Message sent successfully!";
+      } else {
+          echo "Error sending message. Please try again.";
+      }
+  }
+  ?>
+<div class="w3-container w3-teal">
+  <form class="w3-container" method="POST">
+    <label class="w3-text-light-grey"><p>Name *</p></label>
+      <input for="name" class="w3-input w3-border w3-light-grey" type="text" placeholder="Name" required>
+
+    <label class="w3-text-light-grey"><p>Email Address *</p></label>
+      <input for="email" class="w3-input w3-border w3-light-grey" type="text" placeholder="Email Address" required>
+
+    <label class="w3-text-light-grey"><p>Phone Number</p></label>
+      <input for="phone-number" class="w3-input w3-border w3-light-grey" type="text" placeholder="Phone Number">
+
+    <label class="w3-text-light-grey"><p>Country</p></label>
+      <input for="country" class="w3-input w3-border w3-light-grey" type="text" placeholder="Country">
+
+    <label class="w3-text-light-grey"><p>Message *</p></label>
+      <input for="message" class="w3-input w3-border w3-light-grey" type="text" placeholder="Message" required>
+
+    <p></p>
+
+  <button class="w3-btn w3-light-grey w3-text-teal" type="submit" method="GET">Send</button>
+
+  <p></p>
+
+</form>
+</div>
+<br>
+
+</body>
+</html>
